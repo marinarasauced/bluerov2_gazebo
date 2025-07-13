@@ -155,7 +155,7 @@
       </sensor>
 
       <sensor name="compass_sensor" type="magnetometer">
-        <!-- <pose>0 0 0 3.142 0 0</pose> -->
+        <pose>0 0 0 3.142 0 0</pose>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
         <magnetometer>
@@ -170,6 +170,13 @@
         
         <custom_type>pressure</custom_type>
         <!-- <topic>/pressure</topic> -->
+
+        <noise type="gaussian">
+          <mean>0.0</mean>
+          <stddev>100.0</stddev>
+          <bias_mean>0.0</bias_mean>
+          <bias_stddev>0.0</bias_stddev>
+        </noise>
         
       </sensor>
 
@@ -461,7 +468,7 @@
 
     <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
       <!-- Port settings -->
-      <fdm_addr>192.168.3.1</fdm_addr>
+      <fdm_addr>127.0.0.1</fdm_addr>
       <fdm_port_in>9012</fdm_port_in>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <lock_step>1</lock_step>
