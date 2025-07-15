@@ -16,13 +16,15 @@ endif()
 find_package(gz-cmake3 REQUIRED)
 set(GZ_CMAKE_VER ${gz-cmake3_VERSION_MAJOR})
 
-CPMAddPackage("gh:blksail-edu/ardupilot_gazebo#ab4ddb8")
+CPMAddPackage("gh:blksail-edu/ardupilot_gazebo#4f933e1")
+
 if(${ardupilot_gazebo_ADDED})
   # build ardupilot_gazebo
   message("Successfully added ardupilot_gazebo")
 endif()
 
 add_subdirectory(src)
+add_subdirectory(plugins)
 
 # --------------------------------------------------------------------------- #
 set(CMAKE_BINARY_DIR ${PROJECT_SOURCE_DIR}/bin)
