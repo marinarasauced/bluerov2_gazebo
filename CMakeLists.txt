@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12.2)
-project(gazebo_bluerov2)
+project(bluerov2_gazebo)
 
 # add dependencies
 include(cmake/CPM.cmake)
@@ -16,7 +16,7 @@ endif()
 find_package(gz-cmake3 REQUIRED)
 set(GZ_CMAKE_VER ${gz-cmake3_VERSION_MAJOR})
 
-CPMAddPackage("gh:blksail-edu/ardupilot_gazebo#4f933e1")
+CPMAddPackage("gh:marinarasauced/ardupilot_gazebo#b7b88de")
 
 if(${ardupilot_gazebo_ADDED})
   # build ardupilot_gazebo
